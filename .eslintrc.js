@@ -2,29 +2,23 @@ module.exports = {
   env: {
     es6: true,
     commonjs: true,
-    browser: true,
+    browser: true
   },
   parserOptions: {
-    jsx: true,
+    jsx: true
   },
   extends: [
     'airbnb',
     'react-app',
-    "plugin:react/recommended",
+    'plugin:react/recommended',
     'plugin:cypress/recommended',
     'plugin:prettier/recommended',
     'plugin:promise/recommended',
     'plugin:security/recommended',
-    'plugin:you-dont-need-lodash-underscore/compatible',
-
+    'plugin:you-dont-need-lodash-underscore/compatible'
   ],
-  plugins: [
-    'cypress',
-    'promise',
-    'prettier',
-    'security'
-  ],
-  'rules': {
+  plugins: ['cypress', 'promise', 'prettier', 'security'],
+  rules: {
     camelcase: 0,
     'class-methods-use-this': 0,
     'consistent-return': 0,
@@ -65,7 +59,7 @@ module.exports = {
     'jsx-a11y/label-has-associated-control': 0,
     'jsx-a11y/no-autofocus': 0,
     'jsx-a11y/no-noninteractive-element-interactions': 0,
-    'jsx-a11y/no-static-element-interactions':  0,
+    'jsx-a11y/no-static-element-interactions': 0,
     'promise/always-return': 0,
     'promise/catch-or-return': 0,
     'promise/no-nesting': 0,
@@ -73,7 +67,7 @@ module.exports = {
     'react/default-props-match-prop-types': 0,
     'react/destructuring-assignment': 0,
     'react/display-name': 0,
-    "react-hooks/exhaustive-deps": 0,
+    'react-hooks/exhaustive-deps': 0,
     'react/prefer-stateless-function': 0,
     'react/forbid-prop-types': 0,
     'react/require-default-props': 0,
@@ -88,10 +82,11 @@ module.exports = {
     'react/jsx-props-no-spreading': 0,
     'react/jsx-filename-extension': 0,
     'react/jsx-one-expression-per-line': 0,
+    'react/jsx-wrap-multilines': 0,
     'security/detect-non-literal-fs-filename': 0,
     'security/detect-non-literal-require': 0,
     'security/detect-object-injection': 0,
     'security/detect-possible-timing-attacks': 0,
     'you-dont-need-lodash-underscore/is-nil': 0
-  },
+  }
 }

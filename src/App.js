@@ -2,6 +2,7 @@ import React from 'react'
 import { Switch, Route, Redirect } from 'react-router-dom'
 import { ProductManagePage, UserPage, ProductRegisterPage } from './pages'
 import './App.css'
+import 'antd/dist/antd.css'
 
 function App() {
   return (

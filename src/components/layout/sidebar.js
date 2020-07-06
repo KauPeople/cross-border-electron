@@ -1,62 +1,43 @@
 import React from 'react'
-import { Menu } from 'antd'
-import { AppstoreOutlined, MailOutlined, SettingOutlined } from '@ant-design/icons'
+import { Layout, Menu } from 'antd'
+import { AppstoreOutlined } from '@ant-design/icons'
+import styled from 'styled-components'
 
-const { SubMenu } = Menu
-
-const Sidebar = () => {
-  const handleClick = (e) => {
-    console.log('click ', e)
-  }
+const { Sider } = Layout
+const Sidebar = (props) => {
+  const { collapsed, history } = props
+  const AdvertiseImage = styled.div`
+    margin-top: 200px;
+    margin-left: 10px;
+    width: 180px;
+    height: 250px;
+    background-color: #000;
+    display: ${(props) => {
+      return props.collapsed ? 'none' : 'block'
+    }};
+  `
   return (
-    <Menu
-      onClick={handleClick}
-      style={{ width: 256 }}
-      defaultSelectedKeys={['1']}
-      defaultOpenKeys={['sub1']}
-      mode="inline"
-    >
-      <SubMenu
-        key="sub1"
-        title={
-          <span>
-            <MailOutlined />
-            <span>Navigation One</span>
-          </span>
-        }
-      >
-        <Menu.ItemGroup key="g1" title="Item 1">
-          <Menu.Item key="1">Option 1</Menu.Item>
-          <Menu.Item key="2">Option 2</Menu.Item>
-        </Menu.ItemGroup>
-        <Menu.ItemGroup key="g2" title="Item 2">
-          <Menu.Item key="3">Option 3</Menu.Item>
-          <Menu.Item key="4">Option 4</Menu.Item>
-        </Menu.ItemGroup>
-      </SubMenu>
-      <SubMenu key="sub2" icon={<AppstoreOutlined />} title="Navigation Two">
-        <Menu.Item key="5">Option 5</Menu.Item>
-        <Menu.Item key="6">Option 6</Menu.Item>
-        <SubMenu key="sub3" title="Submenu">
-          <Menu.Item key="7">Option 7</Menu.Item>
-          <Menu.Item key="8">Option 8</Menu.Item>
-        </SubMenu>
-      </SubMenu>
-      <SubMenu
-        key="sub4"
-        title={
-          <span>
-            <SettingOutlined />
-            <span>Navigation Three</span>
-          </span>
-        }
-      >
-        <Menu.Item key="9">Option 9</Menu.Item>
-        <Menu.Item key="10">Option 10</Menu.Item>
-        <Menu.Item key="11">Option 11</Menu.Item>
-        <Menu.Item key="12">Option 12</Menu.Item>
-      </SubMenu>
-    </Menu>
+    <>
+      <Sider trigger={null} collapsible collapsed={collapsed}>
+        <Menu
+          theme="light"
+          style={collapsed ? { width: 80 } : { width: 200 }}
+          selectedKeys={[history.location.pathname.split('/')[1]]}
+          mode="inline"
+        >
+          <Menu.Item onClick={() => history.push('/registers')} key="registers" icon={<AppstoreOutlined />}>
+            상품 수집
+          </Menu.Item>
+          <Menu.Item onClick={() => history.push('/products')} key="products" icon={<AppstoreOutlined />}>
+            상품 관리
+          </Menu.Item>
+          <Menu.Item onClick={() => history.push('/settings')} key="settings" icon={<AppstoreOutlined />}>
+            오픈 마켓 설정
+          </Menu.Item>
+        </Menu>
+        <AdvertiseImage collapsed={collapsed} />
+      </Sider>
+    </>
   )
 }
 

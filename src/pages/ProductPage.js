@@ -1,15 +1,15 @@
 import React from 'react'
 import Layout from '../components/layout/Layout'
 
-const ProductManagePage = () => {
-  console.log('test')
+const ProductPage = (props) => {
+  const { history } = props
   return (
     <>
-      <Layout>
+      <Layout history={history}>
         <div>productmanagepage</div>
       </Layout>
     </>
   )
 }
 
-export default ProductManagePage
+export default ProductPage

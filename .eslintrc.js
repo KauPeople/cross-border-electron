@@ -19,6 +19,7 @@ module.exports = {
   ],
   plugins: ['cypress', 'promise', 'prettier', 'security'],
   rules: {
+    'import/no-unresolved': [2, { caseSensitive: false }],
     camelcase: 0,
     'class-methods-use-this': 0,
     'consistent-return': 0,

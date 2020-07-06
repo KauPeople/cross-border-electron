@@ -1,3 +1,3 @@
-export { default as ProductManagePage } from './ProductManagePage'
-export { default as ProductRegisterPage } from './ProductRegisterPage'
-export { default as UserPage } from './UserPage'
+export { default as ProductPage } from './ProductPage'
+export { default as RegisterPage } from './RegisterPage'
+export { default as LoginPage } from './LoginPage'

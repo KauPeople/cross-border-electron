@@ -11,6 +11,7 @@ const Input = styled.input`
 const Aspan = styled.span`
   cursor: pointer;
   color: blue;
+  margin-right: 260px;
 `
 const SubmitButton = styled.button`
   width: 300px;
@@ -19,7 +20,7 @@ const SubmitButton = styled.button`
   cursor: pointer;
 `
 
-const Login = (props) => {
+const FindPassword = (props) => {
   const { history } = props
   const { register, handleSubmit, errors } = useForm()
   const onSubmit = (data) => console.log(data)
@@ -40,14 +41,11 @@ const Login = (props) => {
           <Input type="password" name="password" ref={register} size="large" placeholder="비밀번호" />
           <SubmitButton type="submit">로그인</SubmitButton>
           <span>
-            <Aspan onClick={() => history.push('/login/find_password')} style={{ marginRight: '170px' }}>
-              비밀번호 찾기
-            </Aspan>
-            <Aspan onClick={() => history.push('/login/join')}>회원가입</Aspan>
+            <Aspan onClick={() => history.push('/login')}>로그인</Aspan>
           </span>
         </div>
       </form>
     </>
   )
 }
-export default Login
+export default FindPassword

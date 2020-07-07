@@ -7,10 +7,13 @@ import 'antd/dist/antd.css'
 function App() {
   return (
     <Switch>
-      <Route exact path="/products" component={ProductPage} />
-      <Route exact path="/registers" component={RegisterPage} />
-      <Route exact path="/login" component={LoginPage} />
+      <Route path="/products" component={ProductPage} />
+      <Route path="/registers" component={RegisterPage} />
+      <Route path="/login" component={LoginPage} />
       <Redirect path="*" to="/products" />
+      {/* <Route path="/mypage" component={MyPage}>
+          {isLoggin ? null : <Redirect to="/user/login" />}
+        </Route> */}
     </Switch>
   )
 }

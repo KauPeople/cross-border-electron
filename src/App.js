@@ -1,13 +1,14 @@
 import React from 'react'
 import { Switch, Route, Redirect } from 'react-router-dom'
-import { ProductPage, LoginPage, RegisterPage } from './pages'
+import { ProductPage, ProductEditPage, LoginPage, RegisterPage } from './pages'
 import './App.css'
 import 'antd/dist/antd.css'
 
 function App() {
   return (
     <Switch>
-      <Route path="/products" component={ProductPage} />
+      <Route exact path="/products" component={ProductPage} />
+      <Route path="/products/:id" component={ProductEditPage} />
       <Route path="/registers" component={RegisterPage} />
       <Route path="/login" component={LoginPage} />
       <Redirect path="*" to="/products" />

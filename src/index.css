@@ -16,3 +16,6 @@ code {
 #root > section > section > aside > div {
   background-color: #ffffff;
 }
+#root > section > section > main > div > div > div > div > div > div > table > tbody {
+  cursor: pointer;
+}

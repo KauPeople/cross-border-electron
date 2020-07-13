@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import { Layout as AntdLayout } from 'antd'
 import styled from 'styled-components'
 import Layout from '../components/layout/Layout'
+import TaobaoUserInfoModal from '../components/modals/TaobaoUserInfoModal'
 
 const { Content } = AntdLayout
 
@@ -30,13 +31,22 @@ const WhiteContent = styled.div`
 const RegisterPage = (props) => {
   const { history } = props
   const [registerURL, setRegisterURL] = useState('')
+  const crawling = () => {
+    console.log(registerURL)
+  }
   return (
     <>
       <Layout history={history}>
         <Content>
           <WhiteContent>
-            <Input placeholder="URL을 입력해주세요." />
-            <SubmitButton>수집</SubmitButton>
+            <Input
+              onChange={(e) => {
+                setRegisterURL(e.target.value)
+              }}
+              placeholder="URL을 입력해주세요."
+            />
+            <SubmitButton onClick={() => crawling()}>수집</SubmitButton>
+            <TaobaoUserInfoModal />
             <Line />
             <div>상품명 *</div>
             <Input />

@@ -2,6 +2,7 @@ const { app, BrowserWindow, Menu, ipcMain, globalShortcut } = require('electron'
 const isDev = require('electron-is-dev')
 const fetch = require('node-fetch')
 const path = require('path')
+const { taobaoUserInfo } = require('./electron/index')
 // const dotenv = require('dotenv')
 // const dotenvExpand = require('dotenv-expand')
 
@@ -90,3 +91,5 @@ app.on('activate', () => {
     createWindow()
   }
 })
+
+ipcMain.on('taobao-info', (e, args) => taobaoUserInfo(e, args))
